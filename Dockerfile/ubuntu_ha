@@ -1,0 +1,5 @@
+FROM ubuntu:18.04
+ENV user=marcel
+ENV password=123456
+CMD ["python3",  "-c", "print('Hallo Marcel! Dein Passwort ist 123456!)"]
+EXPOSE 80

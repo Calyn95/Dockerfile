@@ -1,0 +1,9 @@
+FROM httpd:latest
+WORKDIR /home/
+COPY index.html /var/www/html/index.html
+COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+RUN apt update; \
+    apt install -y curl; \
+    echo "console.log('Hello from JavaScript')" > hello.js;
+CMD ["node", "hello.js"]
+EXPOSE 80
